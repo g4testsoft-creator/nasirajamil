@@ -24,11 +24,11 @@ export default function Projects() {
           Selected work
         </h2>
         <p className="mt-3 max-w-2xl text-[var(--muted)]">
-          Here are some of the projects I've worked on.
+          Professional experience across Rails, Next.js, Laravel, and cloud integrations.
         </p>
       </motion.div>
 
-      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-6 md:grid-cols-2">
         {site.projects.map((project, i) => (
           <motion.li
             key={project.title}
@@ -40,9 +40,16 @@ export default function Projects() {
             <h3 className="text-lg font-semibold text-[var(--fg)]">
               {project.title}
             </h3>
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--muted)]">
+            <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
               {project.description}
             </p>
+            {"highlights" in project && project.highlights.length > 0 ? (
+              <ul className="mt-3 flex-1 list-inside list-disc space-y-1.5 text-sm leading-relaxed text-[var(--muted)] marker:text-[var(--accent)]">
+                {project.highlights.map((h) => (
+                  <li key={h}>{h}</li>
+                ))}
+              </ul>
+            ) : null}
             <div className="mt-4 flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <span
@@ -53,19 +60,31 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <div className="mt-6 flex gap-3">
-              <Link
-                href={project.link}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] transition-colors hover:text-[var(--fg)]"
-              >
-                Live <ExternalLink className="h-4 w-4" />
-              </Link>
-              <Link
-                href={project.repo}
-                className="inline-flex items-center gap-1.5 text-sm text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
-              >
-                Code <Code className="h-4 w-4" />
-              </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {project.link !== "#" ? (
+                <Link
+                  href={project.link}
+                  target={
+                    project.link.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    project.link.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] transition-colors hover:text-[var(--fg)]"
+                >
+                  Company site <ExternalLink className="h-4 w-4" />
+                </Link>
+              ) : null}
+              {project.repo !== "#" ? (
+                <Link
+                  href={project.repo}
+                  className="inline-flex items-center gap-1.5 text-sm text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
+                >
+                  Code <Code className="h-4 w-4" />
+                </Link>
+              ) : null}
             </div>
           </motion.li>
         ))}
