@@ -37,8 +37,7 @@ export const site = {
       "Docker",
       "Terraform",
       "CI/CD",
-    ],
-    Tools: ["Redis", "Sidekiq", "RSpec", "Git", "Postman"],
+    ]
   },
   projects: [
     {
@@ -111,7 +110,7 @@ export const site = {
         "jQuery",
         "Bootstrap",
       ],
-      link: "#",
+      link: "https://realestategame.com",
       repo: "#",
     },
     {

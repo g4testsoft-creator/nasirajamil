@@ -17,11 +17,8 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="mb-12 text-center md:text-left"
       >
-        <p className="text-sm font-medium uppercase tracking-widest text-[var(--accent)]">
-          Projects
-        </p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--fg)] md:text-4xl">
-          Selected work
+        Projects
         </h2>
         <p className="mt-3 max-w-2xl text-[var(--muted)]">
           Professional experience across Rails, Next.js, Laravel, and cloud integrations.

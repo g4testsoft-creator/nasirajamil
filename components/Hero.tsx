@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pt-20 md:px-8">
+    <div className="relative flex flex-col justify-center overflow-hidden px-4 pt-10 md:px-8">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
@@ -68,18 +68,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
-      <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-xs text-[var(--muted)]"
-        aria-label="Scroll to about"
-      >
-        <span className="hidden sm:inline">Scroll</span>
-        <ArrowDown className="h-5 w-5 animate-bounce text-[var(--accent)]" />
-      </motion.a>
     </div>
   );
 }

@@ -31,13 +31,17 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* Hero Section - Full viewport height */}
-      <section id="home" className="min-h-screen">
+      <section id="home">
         <Hero />
       </section>
 
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-4 md:px-8">
+        <Skills />
+      </section>
+
       {/* About Section */}
-      <section id="about" className="py-20 px-4 md:px-8">
+      <section id="about" className="py-6 px-4 md:px-8">
         <About />
       </section>
 
@@ -47,11 +51,6 @@ export default function Home() {
         className="border-y border-white/5 bg-[var(--bg-elevated)]/80 py-20 px-4 md:px-8"
       >
         <Projects />
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 md:px-8">
-        <Skills />
       </section>
 
       {/* Contact Section */}
